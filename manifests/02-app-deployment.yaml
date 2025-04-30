@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  greetings-app
+  namespace: default
+  labels:
+    app:  greetings-app
+spec:
+  selector:
+    matchLabels:
+      app: greetings-app
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: greetings-app
+    spec:
+      containers:
+      - name: greetings-app
+        image: acrlabepm.azurecr.io/greetings_app:v0.1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: NAME
+          valueFrom:
+            configMapKeyRef:
+              name: greetings-config
+              key: NAME
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+      - name: acr-auth
+      nodeSelector: 
+        agentpool: frontpool

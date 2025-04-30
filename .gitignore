@@ -1,3 +1,6 @@
+terraform/aks_root/aks_config
+
+
 # Local .terraform directories
 **/.terraform/*
 
