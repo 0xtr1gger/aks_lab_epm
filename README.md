@@ -99,3 +99,7 @@ docker push acrlabepm.azurecr.io/greetings_app:v0.1
 ```bash
 az acr repository list --name $ACR_NAME --output table
 ```
+
+![get_svc_aks_epm](https://github.com/user-attachments/assets/cecf16cb-2f35-491a-9ab0-820963bad211)
+![kubectl_get_all_aks_epm](https://github.com/user-attachments/assets/7c00e6f3-4a06-44ed-9410-70d817d51c3a)
+![websiite_aks_epm](https://github.com/user-attachments/assets/64e11c5c-1671-4134-bed3-f4cf04e02331)
